@@ -1,193 +1,367 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Black Cat VIP Mega Poster</title>
-<style>
-  body {
-    background: radial-gradient(circle at top, #151a28 0%, #080a10 100%);
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .poster-container {
-    width: 1400px;
-    background: rgba(10, 14, 24, 0.95);
-    border: 2px solid #d4af37;
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow: 0 0 50px rgba(0, 200, 255, 0.2);
-  }
-  .header {
-    text-align: center;
-    border: 2px solid #00c8ff;
-    background: rgba(18, 24, 38, 0.9);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
-  }
-  .header h1 {
-    color: #ffd700;
-    margin: 0 0 10px 0;
-    font-size: 38px;
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  }
-  .header .sub {
-    color: #00e6ff;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  .header .motto {
-    color: #c8dcf0;
-    font-size: 18px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-  }
-  .col {
-    background: rgba(15, 20, 32, 0.7);
-    border-radius: 15px;
-    padding: 12px;
-  }
-  .col-title {
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
-  .card {
-    background: rgba(22, 28, 44, 0.85);
-    border-radius: 10px;
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    font-family: 'Consolas', monospace;
-    font-size: 13px;
-    position: relative;
-    border-left: 5px solid;
-  }
-  .card .u { color: #ffffff; margin-bottom: 3px; }
-  .card .p { font-weight: bold; margin-bottom: 3px; }
-  .card .exp { color: #8fa3bf; font-size: 11px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐾 القط الأسود | VIP 👑 - لوحة أكواد البث</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- مكتبة html2canvas لتصدير اللوحة الفنية كصورة فوراً بدون برامج خارجية -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- مكتبة أيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 
-  /* أعمدة بألوان نيون */
-  .c1 { border-top: 2px solid #00d2ff; }
-  .c1 .col-title { background: rgba(0, 210, 255, 0.2); border: 1px solid #00d2ff; color: #00d2ff; }
-  .c1 .card { border-left-color: #00d2ff; }
-  .c1 .p { color: #00d2ff; }
+  <style>
+    * {
+      font-family: 'Cairo', sans-serif;
+    }
+    .code-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* خلفية متدرجة مع أضواء نيون سايبر */
+    body {
+      background-color: #05070d;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 10% 40%, rgba(0, 229, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 60%, rgba(255, 0, 128, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
 
-  .c2 { border-top: 2px solid #ff4b4b; }
-  .c2 .col-title { background: rgba(255, 75, 75, 0.2); border: 1px solid #ff4b4b; color: #ff4b4b; }
-  .c2 .card { border-left-color: #ff4b4b; }
-  .c2 .p { color: #ff4b4b; }
+    /* تأثيرات التوهج النيوني */
+    .neon-gold {
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 25px rgba(255, 215, 0, 0.4);
+    }
+    .neon-cyan {
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.7), 0 0 20px rgba(0, 229, 255, 0.4);
+    }
+    .box-glow-gold {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.1);
+    }
 
-  .c3 { border-top: 2px solid #b450ff; }
-  .c3 .col-title { background: rgba(180, 80, 255, 0.2); border: 1px solid #b450ff; color: #b450ff; }
-  .c3 .card { border-left-color: #b450ff; }
-  .c3 .p { color: #b450ff; }
+    /* كروت زجاجية مضيئة مع تأثير تفاعلي */
+    .glass-card {
+      background: rgba(14, 20, 33, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-2px);
+      background: rgba(22, 31, 51, 0.9);
+    }
 
-  .c4 { border-top: 2px solid #00ff8c; }
-  .c4 .col-title { background: rgba(0, 255, 140, 0.2); border: 1px solid #00ff8c; color: #00ff8c; }
-  .c4 .card { border-left-color: #00ff8c; }
-  .c4 .p { color: #00ff8c; }
+    /* توهجات الأعمدة */
+    .col-cyan { border-color: rgba(0, 229, 255, 0.4); }
+    .col-cyan:hover { box-shadow: 0 0 15px rgba(0, 229, 255, 0.35); border-color: #00e5ff; }
+    
+    .col-amber { border-color: rgba(255, 170, 0, 0.4); }
+    .col-amber:hover { box-shadow: 0 0 15px rgba(255, 170, 0, 0.35); border-color: #ffaa00; }
+    
+    .col-purple { border-color: rgba(186, 85, 211, 0.4); }
+    .col-purple:hover { box-shadow: 0 0 15px rgba(186, 85, 211, 0.35); border-color: #ba55d3; }
 
-  .footer {
-    text-align: center;
-    border: 2px solid #d4af37;
-    background: rgba(18, 22, 34, 0.95);
-    border-radius: 15px;
-    padding: 15px;
-    margin-top: 25px;
-    color: #ffd700;
-    font-size: 22px;
-    font-weight: bold;
-  }
-</style>
+    /* مخصص لشريط التمرير */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080c14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f2c44;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+  </style>
 </head>
-<body>
+<body class="min-h-screen text-slate-100 p-3 sm:p-6 flex flex-col items-center">
 
-<div class="poster-container">
-  <div class="header">
-    <h1>🐾 القط الأسود | VIP ACTIVATIONS 👑</h1>
-    <div class="sub">DOWNLOAD CLICK VIP: Downloader (4324650) | Code (5027635)</div>
-    <div class="motto">حصرياً لمجموعة القط الأسود - حب الخير للغير</div>
+  <!-- شريط التحكم العلوي (خارج منطقة الصورة القابلة للحفظ) -->
+  <div class="w-full max-w-5xl mb-6 flex flex-wrap gap-3 items-center justify-between bg-slate-900/80 p-4 rounded-2xl border border-slate-800 backdrop-blur-md">
+    
+    <!-- شريط البحث السريع -->
+    <div class="relative flex-1 min-w-[240px]">
+      <i class="fa-solid fa-magnifying-glass absolute right-4 top-3.5 text-slate-400"></i>
+      <input type="text" id="searchInput" placeholder="ابحث عن اسم المشغل أو الكود..." 
+             class="w-full pr-11 pl-4 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-sm">
+    </div>
+
+    <!-- أزرار الإجراءات السريعة -->
+    <div class="flex items-center gap-2">
+      <button onclick="downloadAsImage()" id="btnDownload" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95 transition-all">
+        <i class="fa-solid fa-camera"></i>
+        <span>حفظ البوستر كصورة</span>
+      </button>
+
+      <button onclick="copyAllText()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm flex items-center gap-2 active:scale-95 transition-all">
+        <i class="fa-regular fa-copy"></i>
+        <span>نسخ الكل</span>
+      </button>
+    </div>
   </div>
 
-  <div class="grid">
-    <!-- العمود الأول -->
-    <div class="col c1">
-      <div class="col-title">STREAM VIP 1</div>
-      <div class="card"><div class="u">U: 983651895326</div><div class="p">P: 252463677557</div><div class="exp">EXP: 18/06/2027</div></div>
-      <div class="card"><div class="u">U: JwanHanan</div><div class="p">P: 56127557</div><div class="exp">EXP: 12/03/2027</div></div>
-      <div class="card"><div class="u">U: Jamalabonassir</div><div class="p">P: 62389282</div><div class="exp">EXP: 13/10/2027</div></div>
-      <div class="card"><div class="u">U: 188914531125</div><div class="p">P: 877931515721</div><div class="exp">EXP: 23/12/2026</div></div>
-      <div class="card"><div class="u">U: 12395154</div><div class="p">P: 12942243</div><div class="exp">EXP: 26/12/2026</div></div>
-      <div class="card"><div class="u">U: 19927817</div><div class="p">P: 63715216</div><div class="exp">EXP: 31/12/2026</div></div>
-      <div class="card"><div class="u">U: 19645498</div><div class="p">P: 67218797</div><div class="exp">EXP: 05/04/2027</div></div>
-      <div class="card"><div class="u">U: 19483953</div><div class="p">P: 38996557</div><div class="exp">EXP: 16/12/2026</div></div>
-      <div class="card"><div class="u">U: 25358617</div><div class="p">P: 33648357</div><div class="exp">EXP: 03/03/2027</div></div>
-      <div class="card"><div class="u">U: 248897682496</div><div class="p">P: 821552132922</div><div class="exp">EXP: 04/09/2027</div></div>
-      <div class="card"><div class="u">U: 27694672</div><div class="p">P: 55652776</div><div class="exp">EXP: 16/03/2027</div></div>
-      <div class="card"><div class="u">U: 26887778</div><div class="p">P: 82641644</div><div class="exp">EXP: 09/03/2027</div></div>
-      <div class="card"><div class="u">U: 28956684</div><div class="p">P: 78488441</div><div class="exp">EXP: 20/12/2026</div></div>
-      <div class="card"><div class="u">U: 29124854</div><div class="p">P: 13289663</div><div class="exp">EXP: 26/10/2026</div></div>
-      <div class="card"><div class="u">U: 31933469</div><div class="p">P: 84466546</div><div class="exp">EXP: 05/01/2027</div></div>
-      <div class="card"><div class="u">U: 32458297</div><div class="p">P: 36995225</div><div class="exp">EXP: 04/01/2027</div></div>
-      <div class="card"><div class="u">U: 32574863</div><div class="p">P: 91918918</div><div class="exp">EXP: 19/12/2026</div></div>
-      <div class="card"><div class="u">U: 36341726</div><div class="p">P: 46944672</div><div class="exp">EXP: 20/12/2026</div></div>
-      <div class="card"><div class="u">U: 36342358</div><div class="p">P: 74978586</div><div class="exp">EXP: 06/12/2026</div></div>
-    </div>
+  <!-- لوحة البوستر الرئيسية القابلة للتصدير كصورة -->
+  <div id="posterMasterpiece" class="w-full max-w-5xl bg-[#090d16] border-2 border-amber-500/40 rounded-3xl p-5 sm:p-8 box-glow-gold relative overflow-hidden">
+    
+    <!-- مؤثرات خلفية داخلية -->
+    <div class="absolute -top-32 -left-32 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- العمود الثاني -->
-    <div class="col c2">
-      <div class="col-title">FAMILY OTT 2</div>
-      <div class="card"><div class="u">U: 37165158</div><div class="p">P: 5573652643</div><div class="exp">EXP: 20/10/2026</div></div>
-      <div class="card"><div class="u">U: 37217359</div><div class="p">P: 79665667</div><div class="exp">EXP: 09/04/2027</div></div>
-      <div class="card"><div class="u">U: 39271764</div><div class="p">P: 54825647</div><div class="exp">EXP: 02/10/2027</div></div>
-      <div class="card"><div class="u">U: 39863819</div><div class="p">P: 85238376</div><div class="exp">EXP: 01/12/2026</div></div>
-      <div class="card"><div class="u">U: 418591267563</div><div class="p">P: 554948644419</div><div class="exp">EXP: 15/03/2027</div></div>
-      <div class="card"><div class="u">U: 42442498</div><div class="p">P: 92686866</div><div class="exp">EXP: 03/12/2026</div></div>
-      <div class="card"><div class="u">U: 44286846</div><div class="p">P: 94491396</div><div class="exp">EXP: 09/12/2026</div></div>
-      <div class="card"><div class="u">U: 443738814352</div><div class="p">P: 698343231959</div><div class="exp">EXP: 09/12/2026</div></div>
-      <div class="card"><div class="u">U: 47161692</div><div class="p">P: 27691411</div><div class="exp">EXP: 07/12/2026</div></div>
-      <div class="card"><div class="u">U: 47329634</div><div class="p">P: 54145572</div><div class="exp">EXP: 18/12/2026</div></div>
-      <div class="card"><div class="u">U: 495811167518</div><div class="p">P: 422321772416</div><div class="exp">EXP: 18/03/2028</div></div>
-      <div class="card"><div class="u">U: 527323628984</div><div class="p">P: 522171329424</div><div class="exp">EXP: 04/03/2027</div></div>
-      <div class="card"><div class="u">U: 54549751</div><div class="p">P: 87656384</div><div class="exp">EXP: 28/12/2026</div></div>
-      <div class="card"><div class="u">U: 54651173</div><div class="p">P: 41925788</div><div class="exp">EXP: 17/12/2026</div></div>
-      <div class="card"><div class="u">U: 57693146</div><div class="p">P: 68371235</div><div class="exp">EXP: 04/12/2026</div></div>
-      <div class="card"><div class="u">U: 59774867</div><div class="p">P: 95647725</div><div class="exp">EXP: 09/01/2028</div></div>
-      <div class="card"><div class="u">U: 62731127</div><div class="p">P: 33676378</div><div class="exp">EXP: 17/11/2026</div></div>
-      <div class="card"><div class="u">U: 635888669775</div><div class="p">P: 467616281293</div><div class="exp">EXP: 03/01/2027</div></div>
-      <div class="card"><div class="u">U: 648268149187</div><div class="p">P: 167562671777</div><div class="exp">EXP: 10/11/2026</div></div>
-    </div>
+    <!-- الهيدر الملكي الفخم -->
+    <header class="relative z-10 text-center mb-8 border border-amber-400/30 bg-gradient-to-b from-[#131a2b] to-[#0c111e] rounded-2xl p-6 sm:p-8 shadow-2xl">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-semibold mb-3">
+        <i class="fa-solid fa-bolt text-amber-400 animate-pulse"></i>
+        <span>تحديثات حصرية ومباشرة</span>
+      </div>
 
-    <!-- العمود الثالث -->
-    <div class="col c3">
-      <div class="col-title">PREMIUM MIX 3</div>
-      <div class="card"><div class="u">U: 68763494</div><div class="p">P: 5344364363</div><div class="exp">EXP: 21/11/2026</div></div>
-      <div class="card"><div class="u">U: 731969726143</div><div class="p">P: 457483847321</div><div class="exp">EXP: 23/03/2027</div></div>
-      <div class="card"><div class="u">U: 73248677</div><div class="p">P: 44921276</div><div class="exp">EXP: 03/02/2027</div></div>
-      <div class="card"><div class="u">U: 75327517</div><div class="p">P: 82935875</div><div class="exp">EXP: 03/12/2026</div></div>
-      <div class="card"><div class="u">U: 79882125</div><div class="p">P: 31516911</div><div class="exp">EXP: 25/11/2026</div></div>
-      <div class="card"><div class="u">U: 81138629</div><div class="p">P: 91947847</div><div class="exp">EXP: 26/12/2026</div></div>
-      <div class="card"><div class="u">U: 81257873</div><div class="p">P: 17669643</div><div class="exp">EXP: 28/10/2026</div></div>
-      <div class="card"><div class="u">U: 82754787</div><div class="p">P: 28963271</div><div class="exp">EXP: 08/12/2026</div></div>
-      <div class="card"><div class="u">U: 84748161</div><div class="p">P: 32624312</div><div class="exp">EXP: 27/11/2026</div></div>
-      <div class="card"><div class="u">U: 88895246</div><div class="p">P: 33641976</div><div class="exp">EXP: 01/12/2026</div></div>
-      <div class="card"><div class="u">U: 94179523</div><div class="p">P: 33863753</div><div class="exp">EXP: 12/12/2026</div></div>
-      <div class="card"><div class="u">U: 92395817</div><div class="p">P: 38928891</div><div class="exp">EXP: 03/12/2026</div></div>
-      <div class="card"><div class="u">U: 94289887</div><div class="p">P: 6956118844</div><div class="exp">EXP: 23/12/2027</div></div>
-      <div class="card"><div class="u">U: 96132682</div><div class="p">P: 77585986</div><div class="exp">EXP: 27/12/2026</div></div>
-      <div class="card"><div class="u">U: 966298416579</div><div class="p">P: 899634667155</div><div class="exp">EXP: 18/12/2026</div></div>
-      <div class="card"><div class="u">U: 98565271</div><div class="p">P: 65928189</div><div class="exp">EXP: 1
+      <h1 class="text-3xl sm:text-5xl font-black neon-gold text-amber-300 tracking-wide mb-2">
+        🐾 القط الأسود | VIP 👑
+      </h1>
+      
+      <p class="text-base sm:text-xl font-bold text-cyan-400 neon-cyan mb-2">
+        أكواد تنزيل التطبيقات ومشغلات البث الحصرية
+      </p>
+
+      <div class="inline-block mt-2 px-6 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm text-slate-300 font-medium">
+        شعارنا الدائم: <span class="text-amber-400 font-bold">حب الخير للغير ❤️</span>
+      </div>
+    </header>
+
+    <!-- شبكة الأعمدة الثلاثة بتوزيع فني دقيق -->
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-5 relative z-10">
+
+      <!-- العمود 1: باقات CRYSTAL & EAGLE (توهج سماوي) -->
+      <section class="flex flex-col gap-2.5">
+        <div class="py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-950/80 to-slate-900 border border-cyan-400/50 text-cyan-300 flex items-center justify-between shadow-lg shadow-cyan-950/30 mb-1">
+          <div class="flex items-center gap-2.5 font-extrabold text-sm sm:text-base">
+            <i class="fa-solid fa-satellite-dish text-cyan-400"></i>
+            <span>باقات CRYSTAL & EAGLE</span>
+          </div>
+          <span class="text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-200 code-font">01</span>
+        </div>
+
+        <div class="flex flex-col gap-2 item-list" id="col1">
+          <!-- الكروت -->
+        </div>
+      </section>
+
+      <!-- العمود 2: مشغلات KD & WOLF (توهج برتقالي ذهبي) -->
+      <section class="flex flex-col gap-2.5">
+        <div class="py-3 px-4 rounded-xl bg-gradient-to-r from-amber-950/80 to-slate-900 border border-amber-400/50 text-amber-300 flex items-center justify-between shadow-lg shadow-amber-950/30 mb-1">
+          <div class="flex items-center gap-2.5 font-extrabold text-sm sm:text-base">
+            <i class="fa-solid fa-shield-halved text-amber-400"></i>
+            <span>مشغلات KD & WOLF</span>
+          </div>
+          <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-200 code-font">02</span>
+        </div>
+
+        <div class="flex flex-col gap-2 item-list" id="col2">
+          <!-- الكروت -->
+        </div>
+      </section>
+
+      <!-- العمود 3: سيرفرات OTT & VIP (توهج بنفسجي نيون) -->
+      <section class="flex flex-col gap-2.5">
+        <div class="py-3 px-4 rounded-xl bg-gradient-to-r from-purple-950/80 to-slate-900 border border-purple-400/50 text-purple-300 flex items-center justify-between shadow-lg shadow-purple-950/30 mb-1">
+          <div class="flex items-center gap-2.5 font-extrabold text-sm sm:text-base">
+            <i class="fa-solid fa-gem text-purple-400"></i>
+            <span>سيرفرات OTT & VIP</span>
+          </div>
+          <span class="text-xs px-2 py-0.5 rounded bg-purple-500/20 text-purple-200 code-font">03</span>
+        </div>
+
+        <div class="flex flex-col gap-2 item-list" id="col3">
+          <!-- الكروت -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- الفوتر الملكي الفخم -->
+    <footer class="mt-8 pt-6 border-t border-slate-800 text-center relative z-10">
+      <div class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-slate-900 via-[#161c2d] to-slate-900 border border-amber-500/30 shadow-xl">
+        <span class="text-amber-400 text-lg">👑</span>
+        <span class="text-slate-200 font-bold text-sm sm:text-base">
+          تمنياتنا لكم بمشاهدة ممتعة — إدارة مجموعة القط الأسود VIP
+        </span>
+        <span class="text-amber-400 text-lg">❤️</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- صندوق الإشعار السريع (Toast Message) -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl bg-slate-900/95 border border-amber-400 text-amber-300 text-sm font-bold shadow-2xl flex items-center gap-3 opacity-0 pointer-events-none transition-all duration-300 z-50">
+    <i class="fa-solid fa-circle-check text-green-400 text-base"></i>
+    <span id="toastMsg">تم النسخ بنجاح!</span>
+  </div>
+
+  <script>
+    // بيانات الأكواد المحددة بالكامل
+    const itemsCol1 = [
+      { name: "Crystal Ott Player", code: "898142", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Crystal Ott V3", code: "440338", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Mmtv 9", code: "754253", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Eagle 4K Player 3.8", code: "237718", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Eagle 4k User - Pas Smarters", code: "495709", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Eagle 4k Smarters Active Code", code: "208488", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Dream 4K Player 3.8", code: "375194", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Luna 4k", code: "200691", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Aronium Platinum Ibo Pro 3.8", code: "550014", type: "col-cyan", colorText: "text-cyan-400" },
+      { name: "Pro 8k Active Code + User", code: "628907", type: "col-cyan", colorText: "text-cyan-400" }
+    ];
+
+    const itemsCol2 = [
+      { name: "Jupiter 3.5", code: "137292", type: "col-amber", colorText: "text-amber-400" },
+      { name: "Mango Payement", code: "293290", type: "col-amber", colorText: "text-amber-400" },
+      { name: "Wolf Zeus Player", code: "934525", type: "col-amber", colorText: "text-amber-400" },
+      { name: "Wolf Ott Official", code: "588810", type: "col-amber", colorText: "text-amber-400" },
+      { name: "Wolf Plus Smart Tv", code: "696303", type: "col-amber", colorText: "text-amber-400" },
+      { name: "Beno 4k Smart", code: "257926", type: "col-amber", colorText: "text-amber-400" },
+      { name: "KD Max 1.5", code: "769119", type: "col-amber", colorText: "text-amber-400" },
+      { name: "KD Max Player", code: "364128", type: "col-amber", colorText: "text-amber-400" },
+      { name: "KD Max Silver", code: "266891", type: "col-amber", colorText: "text-amber-400" },
+      { name: "Blue 4k Ultra", code: "726425", type: "col-amber", colorText: "text-amber-400" }
+    ];
+
+    const itemsCol3 = [
+      { name: "Amigo 8k Pkayer", code: "960865", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Iron Max V6.2", code: "973285", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Viper Gold V2", code: "842666", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Ott Platinum Code", code: "909694", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Golden Ott Active Code v1", code: "981893", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Petra Tv", code: "273989", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Forever Tv v2.1.1", code: "198776", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Pure Player", code: "615572", type: "col-purple", colorText: "text-purple-300" },
+      { name: "Pure", code: "822240", type: "col-purple", colorText: "text-purple-300" }
+    ];
+
+    // دالة إنشاء بطاقة كود
+    function createCard(item) {
+      return `
+        <div class="glass-card ${item.type} p-2.5 sm:p-3 rounded-xl flex items-center justify-between gap-2 cursor-pointer group card-item"
+             onclick="copyCode('${item.code}', '${item.name}')" 
+             title="اضغط لنسخ الكود">
+          <div class="flex items-center gap-2 overflow-hidden">
+            <span class="w-1.5 h-6 rounded-full bg-slate-700 group-hover:bg-amber-400 transition-colors"></span>
+            <span class="text-xs sm:text-sm font-semibold text-slate-200 group-hover:text-white truncate item-name">
+              ${item.name}
+            </span>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="code-font text-xs sm:text-sm font-bold ${item.colorText} bg-slate-950/70 border border-slate-800 px-2.5 py-1 rounded-lg tracking-wider item-code">
+              ${item.code}
+            </span>
+            <i class="fa-regular fa-clone text-slate-500 group-hover:text-amber-400 text-xs transition-colors"></i>
+          </div>
+        </div>
+      `;
+    }
+
+    // عرض العناصر في الأعمدة
+    function render() {
+      document.getElementById('col1').innerHTML = itemsCol1.map(createCard).join('');
+      document.getElementById('col2').innerHTML = itemsCol2.map(createCard).join('');
+      document.getElementById('col3').innerHTML = itemsCol3.map(createCard).join('');
+    }
+
+    // نسخ الكود للحافظة
+    function copyCode(code, name) {
+      const tempInput = document.createElement("input");
+      tempInput.value = code;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      showToast(`تم نسخ كود [ ${name} ]: ${code}`);
+    }
+
+    // إشعار التوست
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // نسخ كل الأكواد كنص منظم
+    function copyAllText() {
+      const all = [...itemsCol1, ...itemsCol2, ...itemsCol3];
+      const text = "👑 أكواد مجموعة 🐾 القط الأسود | VIP 👑\n\n" + 
+        all.map(i => `${i.name} ➔ ${i.code}`).join('\n') + 
+        "\n\n❤️ مشاهدة ممتعة - حب الخير للغير";
+
+      const tempArea = document.createElement("textarea");
+      tempArea.value = text;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempArea);
+
+      showToast("تم نسخ قائمة الأكواد بالكامل للحافظة!");
+    }
+
+    // البحث المباشر
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const val = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.card-item').forEach(card => {
+        const name = card.querySelector('.item-name').innerText.toLowerCase();
+        const code = card.querySelector('.item-code').innerText.toLowerCase();
+        if (name.includes(val) || code.includes(val)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // تحميل البوستر كصورة PNG فورية عالية النقاء
+    function downloadAsImage() {
+      const poster = document.getElementById('posterMasterpiece');
+      const btn = document.getElementById('btnDownload');
+      const oldHtml = btn.innerHTML;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>جاري إنشاء الصورة...</span>`;
+      btn.disabled = true;
+
+      html2canvas(poster, {
+        scale: 2, // جودة مضاعفة Retina Ultra HD
+        backgroundColor: '#090d16',
+        useCORS: true,
+        logging: false
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'BlackCat_VIP_Codes_Masterpiece.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        
+        btn.innerHTML = oldHtml;
+        btn.disabled = false;
+        showToast("تم تصدير وحفظ الصورة بنجاح!");
+      }).catch(err => {
+        console.error(err);
+        btn.innerHTML = oldHtml;
+        btn.disabled = false;
+        showToast("حدث خطأ أثناء تصدير الصورة");
+      });
+    }
+
+    // التشغيل عند التحميل
+    window.onload = render;
+  </script>
+</body>
+</html>
